@@ -1,7 +1,7 @@
 # Angular Frontend Showcase
 Angular Frontend Showcase
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 
 ## Live Demo
 www.angularux.com

@@ -1,0 +1,44 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 20px;
+}
+.dsai {
+  width: 790px;
+  height: 390px;
+  background-image: url(/assets/images/deepspeedai.png);
+  border-radius: 10px;
+  border: solid 1px #0054a8;
+  box-shadow: #000 0px 0px 5px inset;
+}
+a {
+  text-decoration: none;
+
+  span {
+    padding-bottom: 15px;
+    color: rgb(36 110 183);
+    font-weight: bolder;
+    font-size: 350px;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 0px #0e7eec;
+    position: relative;
+    top: 277px;
+  }
+}
+
+
+@media screen and (max-width: 376px) {
+  .dsai {
+    width: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    span{
+      font-size: 28px;
+      top: 0;
+    }
+  }
+
+}

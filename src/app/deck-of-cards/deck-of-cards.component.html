@@ -1,0 +1,7 @@
+<button pButton (click)="Deck()" label="Shuffle"></button>
+{{cards.suit}}
+<ul class="cardList" [@listAnimation]="cards.length" fxLayout="row wrap" fxLayoutAlign="space-between center" style="padding:20px;">
+  <li *ngFor="let card of cards; let i = index" [@actionAnimation]="card.rank" fxFlex="20">
+    <span [ngClass]="card.suit"> Suit: {{card.suit}} Rank: <span [ngClass]="card.rank"></span>{{card.rank}}</span>
+  </li>
+</ul>

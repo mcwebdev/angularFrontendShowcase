@@ -1,0 +1,121 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 20px;
+}
+
+h5 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.widget {
+  position: relative;
+  font-size: 18px;
+  background: #c2c2c2;
+  padding: 5px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.22);
+  text-shadow: 1px 1px #e1e1e1;
+  color: #495057;
+  margin-bottom: 15px;
+  border-radius: 5px;
+
+  div.widgetContent {
+    padding: 10px;
+    border-top: solid 1px rgb(255 255 255 / 60%);
+  }
+
+  h2 {
+    font-size: 18px;
+    background: #c2c2c2;
+    padding: 5px;
+    border-bottom: solid 1px rgb(0 0 0 / 22%);
+  }
+
+  .filters .p-inputtext.p-component {
+    margin: 0 10px 10px 0;
+  }
+}
+
+.node {
+}
+
+.p-inputgroup {
+  margin: 10px 0;
+}
+
+
+:host ::ng-deep .p-organizationchart {
+  .p-person {
+    padding: 0;
+    border: 0 none;
+  }
+
+  .node-header, .node-content {
+    padding: .5em .7rem;
+  }
+
+  .node-header {
+    background-color: #495ebb;
+    color: #ffffff;
+  }
+
+  .node-content {
+    text-align: center;
+    border: 1px solid #495ebb;
+  }
+
+  .node-content img {
+    border-radius: 50%;
+  }
+
+  .department-cfo {
+    background-color: #7247bc;
+    color: #ffffff;
+  }
+
+  .department-coo {
+    background-color: #a534b6;
+    color: #ffffff;
+  }
+
+  .department-cto {
+    background-color: #e9286f;
+    color: #ffffff;
+  }
+}
+@media screen and (max-width: 40rem) {
+  :host ::ng-deep {
+    .p-datatable {
+      &.p-datatable-responsive-demo {
+        .p-datatable-thead > tr > th,
+        .p-datatable-tfoot > tr > td {
+          display: none !important;
+        }
+
+        .p-datatable-tbody > tr > td {
+          text-align: left;
+          display: block;
+          width: 100%;
+          float: left;
+          clear: left;
+          border: 0 none;
+
+          .p-column-title {
+            padding: .4rem;
+            min-width: 30%;
+            display: inline-block;
+            margin: -.4em 1em -.4em -.4rem;
+            font-weight: bold;
+          }
+
+          &:last-child {
+            border-bottom: 1px solid var(--surface-d);
+          }
+        }
+      }
+    }
+  }
+}

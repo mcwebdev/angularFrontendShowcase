@@ -1,0 +1,8 @@
+<div fxLayout="column" fxFlex="25" fxFlex.xs="100">
+  <h2>Power Booster</h2>
+  <input type="text" placeholder="Enter a number, it will be piped into the transform." pInputText [(ngModel)]="expo" />
+  <p>Super power boost: {{10 | exponentialStrength: expo}}</p>
+  <pre><code [highlight]="code" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+  <!--<pre>{{ response | json }}</pre>-->
+</div>
+

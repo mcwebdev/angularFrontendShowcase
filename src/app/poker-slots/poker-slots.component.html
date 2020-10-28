@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxFlex="33">
+    <button pButton label="Spin" (click)="refreshPage()" class="shuffle"></button>
+  </div>
+ 
+  <h2  fxFlex="33" [ngClass]="winIcon">
+    <div class="one" [innerHtml]="htmlToAdd"></div>
+    {{winnerMsg}}!
+  </h2>
+  <div fxFlex="33"></div>
+</div>
+<div class="slots">
+  <ul id="slot1" class="cardList slot">
+    <li class="number" *ngFor="let card of cards | slice:0:10; let i = index;">
+      <span [ngClass]="card.suit"> <span [ngClass]="card.rank"></span></span>
+    </li>
+  </ul>
+
+  <ul id="slot2" class="cardList slot">
+    <li class="number" *ngFor="let card of cards | slice:10:20; let i = index;">
+      <span [ngClass]="card.suit"> <span [ngClass]="card.rank"></span></span>
+    </li>
+  </ul>
+
+  <ul id="slot3" class="cardList slot">
+    <li class="number" *ngFor="let card of cards | slice:20:30; let i = index;">
+      <span [ngClass]="card.suit"> <span [ngClass]="card.rank"></span></span>
+    </li>
+  </ul>
+</div>

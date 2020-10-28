@@ -1,0 +1,21 @@
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="start">
+  <div fxFlex="25">
+    <p-chart type="bar" [data]="data"></p-chart>
+  </div>
+  <div fxFlex="25">
+    <p-chart type="doughnut" [data]="dataDoughnut"></p-chart>
+  </div>
+  <div fxFlex="25">
+    <p-toast [style]="{marginTop: '80px'}"></p-toast>
+    <p-chart type="line" [data]="dataLine" (onDataSelect)="selectData($event)"></p-chart>
+  </div>
+  <div fxFlex="25">
+    <p-chart type="polarArea" [data]="dataPolar"></p-chart>
+  </div>
+  <div fxFlex="25">
+    <p-chart type="pie" [data]="dataPie"></p-chart>
+  </div>
+  <div fxFlex="25">
+    <p-chart type="radar" [data]="dataRadar"></p-chart>
+  </div>
+</div>

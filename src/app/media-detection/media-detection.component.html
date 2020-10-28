@@ -1,0 +1,40 @@
+<div fxLayout="column" fxFlex="35" fxFlex.xs="100">
+  <p-card>
+    <p-header>
+      <label>User Media</label>
+    </p-header>
+    <ul>
+      <li>
+        <label>User Audio: </label>{{userAudio}}
+      </li>
+      <li>
+        <label>User Video: </label>{{userVideo}}
+      </li>
+    </ul>
+    <p-footer>
+
+    </p-footer>
+  </p-card>
+
+  <p-toast position="top-right"></p-toast>
+
+  <div class="videoNode" fxLayout="column" fxFlex="50">
+    <video autoplay playsinline muted id="webcam" #video></video>
+  </div>
+  <!--<svg #svg id="svg" width="960" height="500"></svg>
+  <svg preserveAspectRatio="none" id="visualizer" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <mask id="mask">
+        <g id="maskGroup"></g>
+      </mask>
+      <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" style="stop-color:#db6247;stop-opacity:1" />
+        <stop offset="40%" style="stop-color:#f6e5d1;stop-opacity:1" />
+        <stop offset="60%" style="stop-color:#5c79c7;stop-opacity:1" />
+        <stop offset="85%" style="stop-color:#b758c0;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#222;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <rect x="0" y="0" width="100%" height="100%" fill="url(#gradient)" mask="url(#mask)"></rect>
+  </svg>
+</div>-->

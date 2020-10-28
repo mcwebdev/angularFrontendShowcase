@@ -1,1 +1,18 @@
-<p>Coming Soon!</p>
+<p-panel header="Fetch Json data over HTTP" [toggleable]="true">
+  <p-table [value]="jsonDataArray">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Package</th>
+        <th>Score</th>
+        <th>Search Score</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-jsonDataArray>
+      <tr>
+        <td>{{jsonDataArray.package.name}}</td>
+        <td>{{jsonDataArray.score.final}}</td>
+        <td>{{jsonDataArray.searchScore}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  </p-panel>

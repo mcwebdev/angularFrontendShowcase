@@ -1,5 +1,4 @@
 # Angular Frontend Showcase
-Angular Frontend Showcase
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.7.
 

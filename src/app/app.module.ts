@@ -13,8 +13,8 @@ import { DeckOfCardsComponent } from './deck-of-cards/deck-of-cards.component';
 import { PokerSlotsComponent } from './poker-slots/poker-slots.component';
 
 
-import { BasicDirective } from './shared-services/basic.directive';
-import { BasicPipe } from './shared-services//basic-pipe.pipe';
+import { BasicDirective } from 'src/shared-services/basic.directive';
+import { BasicPipe } from 'src/shared-services//basic-pipe.pipe';
 
 
 // Primeng imports
@@ -47,8 +47,9 @@ import { ChartModule } from 'primeng/chart';
 import { TieredMenuModule } from 'primeng/tieredmenu';
 import { CardModule } from 'primeng/card';
 import { MenubarModule } from 'primeng/menubar';
+import { PanelModule } from 'primeng/panel';
 
-import { CustomerService } from 'src/app/shared-services/customerservice';
+import { CustomerService } from 'src/shared-services/customerservice';
 
 import { HttpComponent } from './http/http.component';
 import { WidgetsComponent } from './widgets/widgets.component';
@@ -65,7 +66,12 @@ import { HighlightModule, HIGHLIGHT_OPTIONS } from 'ngx-highlightjs';
 import { ChartsComponent } from './charts/charts.component';
 import { MediaDetectionComponent } from './media-detection/media-detection.component';
 import { MachineLearningComponent } from './machine-learning/machine-learning.component';
+import { ConceptsComponent } from './concepts/concepts.component';
+import { GraphQLComponent } from './graph-ql/graph-ql.component';
 
+
+import { GraphQLModule } from './graphql.module';
+import { UpvoterComponent } from './graph-ql/upvoter.component';
 
 
 
@@ -85,13 +91,17 @@ import { MachineLearningComponent } from './machine-learning/machine-learning.co
     BasicDirective,
     ChartsComponent,
     MediaDetectionComponent,
-    MachineLearningComponent
+    MachineLearningComponent,
+    ConceptsComponent,
+    GraphQLComponent,
+    UpvoterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    GraphQLModule,
     FormsModule,
     FlexLayoutModule,
     ButtonModule,
@@ -123,7 +133,8 @@ import { MachineLearningComponent } from './machine-learning/machine-learning.co
     HighlightModule,
     TieredMenuModule,
     CardModule,
-    MenubarModule
+    MenubarModule,
+    PanelModule
   ],
   bootstrap: [AppComponent],
   providers: [

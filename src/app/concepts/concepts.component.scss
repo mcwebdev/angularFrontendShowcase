@@ -1,0 +1,33 @@
+:host {
+  height: 100%;
+  width: 100%;
+  display: block;
+  position: relative;
+  padding: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  text-transform: capitalize;
+}
+
+h3{
+    margin:8px 0;
+}
+p {
+  font-size: 18px;
+  padding: 8px 0;
+}
+
+li{
+    font-weight:600;
+    padding:3px 0;
+}
+
+p-button{ margin:5px 5px 5px 0;}
+
+ul ul li {
+    font-weight: 100;
+    font-style:italic;
+    color: #000;
+}

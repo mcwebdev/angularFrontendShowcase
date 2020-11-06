@@ -2,12 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { SelectItem } from 'primeng/api';
 import { SelectItemGroup } from 'primeng/api';
-import { CountryService } from '../shared-services/countryservice';
+import { CountryService } from 'src/shared-services/countryservice';
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
 //table
-import { Customer, Representative } from '../shared-services/customer';
-import { CustomerService } from '../shared-services/customerservice';
+import { Customer, Representative } from 'src/shared-services/customer';
+import { CustomerService } from 'src/shared-services/customerservice';
 import { Table } from 'primeng/table';
 import { PrimeNGConfig } from 'primeng/api';
 

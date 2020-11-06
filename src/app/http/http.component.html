@@ -1,4 +1,8 @@
-<p-panel header="Fetch Json data over HTTP" [toggleable]="true">
+<p-panel header="Fetch Json data over HTTP with error checking" [toggleable]="true">
+  <div fxLayout="row">
+    <p-button label="Make a bad request" (click)="checkForErrors()"></p-button>
+    <p-button label="Make a good request" (click)="checkForSuccess()"></p-button>
+  </div>
   <p-table [value]="jsonDataArray">
     <ng-template pTemplate="header">
       <tr>
@@ -15,4 +19,5 @@
       </tr>
     </ng-template>
   </p-table>
-  </p-panel>
+</p-panel>
+<p-toast position="top-right"></p-toast>

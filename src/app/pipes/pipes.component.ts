@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasicPipe } from 'src/app/shared-services/basic-pipe.pipe';
+import { BasicPipe } from 'src/shared-services/basic-pipe.pipe';
 import { HighlightResult } from 'ngx-highlightjs';
 
 @Component({

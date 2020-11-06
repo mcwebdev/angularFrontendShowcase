@@ -12,6 +12,8 @@ import { WidgetsComponent } from './widgets/widgets.component';
 import { ChartsComponent } from './charts/charts.component';
 import { MediaDetectionComponent } from './media-detection/media-detection.component';
 import { MachineLearningComponent } from './machine-learning/machine-learning.component';
+import { ConceptsComponent } from './concepts/concepts.component';
+import { GraphQLComponent } from './graph-ql/graph-ql.component';
 
 const routes: Routes = [
   {
@@ -54,6 +56,11 @@ const routes: Routes = [
         data: { animationState: 'One' }
       },
       {
+        path: 'graph',
+        component: GraphQLComponent,
+        data: { animationState: 'Three' }
+      },
+      {
         path: 'webworkers',
         component: WebWorkersComponent,
         data: { animationState: 'Two' }
@@ -77,6 +84,11 @@ const routes: Routes = [
         path: 'machine',
         component: MachineLearningComponent,
         data: { animationState: 'Three' }
+      },
+      {
+        path: 'concepts',
+        component: ConceptsComponent,
+        data: { animationState: 'One' }
       },
       {
         path: '**',

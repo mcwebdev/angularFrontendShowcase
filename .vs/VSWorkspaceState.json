@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\concepts",
+    "\\src\\app\\http",
+    "\\src\\app\\media-detection"
+  ],
+  "SelectedNode": "\\src\\app\\concepts\\concepts.component.ts",
+  "PreviewInSolutionExplorer": false
+}

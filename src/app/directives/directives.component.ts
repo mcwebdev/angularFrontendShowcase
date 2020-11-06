@@ -1,5 +1,5 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-import { BasicDirective } from 'src/app/shared-services/basic.directive';
+import { BasicDirective } from 'src/shared-services/basic.directive';
 import { HighlightResult } from 'ngx-highlightjs';
 
 @Component({

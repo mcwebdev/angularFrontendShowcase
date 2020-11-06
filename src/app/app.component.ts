@@ -84,8 +84,8 @@ export class AppComponent {
         routerLinkActiveOptions: 'router-link-active'
       },
       {
-        label: 'Services',
-        routerLink: 'services',
+        label: 'GraphQL',
+        routerLink: 'graph',
         routerLinkActiveOptions: 'router-link-active'
       },
       {

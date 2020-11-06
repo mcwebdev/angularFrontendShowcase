@@ -1,0 +1,165 @@
+<div fxLayoutAlign="center start">
+
+  <div fxLayout="column" fxFlex="50">
+    <p-panel header="read only objects" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+        TypeScript includes the readonly keyword that makes a property as read-only in the class, type or interface.
+      </p>
+      <p>
+        Prefix readonly is used to make a property as read-only. Read-only members can be accessed outside the class,
+        but their value cannot be changed. Since read-only members cannot be changed outside the class, they either
+        need to be initialized at declaration or initialized inside the class constructor.
+      </p>
+      <pre><code [highlight]="readonly" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+      <p>
+        In the above example, we have the Employee class with two properties- empName and empCode. Since empCode is read only, it can be initialized at the time of declaration or in the constructor.
+      </p>
+      <p>
+        If we try to change the value of empCode after the object has been initialized, the compiler shows the following compilation error:
+      </p>
+      <p>
+        error TS2540: Cannot assign to empCode' because it is a constant or a read-only property.
+      </p>
+
+      <!--<pre>{{ response | json }}</pre>-->
+
+    </p-panel>
+
+    <p-panel header="object prototypes" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+        All JavaScript objects inherit properties and methods from a prototype.
+      </p>
+
+      <ul>
+        <li>
+          Date objects inherit from Date.prototype
+        </li>
+        <li>Array objects inherit from Array.prototype</li>
+        <li>
+          Person objects inherit from Person.prototype
+        </li>
+      </ul>
+      <p>
+        The Object.prototype is on the top of the prototype inheritance chain:
+        Date objects, Array objects, and Person objects inherit from Object.prototype.
+      </p>
+      <pre><code [highlight]="prototype" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+    </p-panel>
+
+    <p-panel header="observable and promise patterns" [toggleable]="true" collapsed="true" toggler="header">
+      <ul>
+        <li>A Promise is eager, whereas an Observable is lazy.</li>
+        <li>A Promise is always asynchronous, while an Observable can be either sequentially synchronous or asynchronous.</li>
+        <li>A Promise can provide a single value, whereas an Observable is a stream of values (from 0 to multiple values).</li>
+        <li>You can apply RxJS operators to an Observable to get a new tailored stream.</li>
+        <li>
+          In Angular we can subscribe to an observable in two ways. [async,or subscribe method]
+          <ul>
+            <li>
+              It is best to use async as this is the most easy and you don’t have to manually manage your subscriptions. Keeping your subscriptions open while not using them is a memory leak and therefore not good.
+            </li>
+          </ul>
+        </li>
+        <pre><code [highlight]="operatorObservable" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+      </ul>
+
+      <h3>Executing observables</h3>
+      <p>
+        The code inside an observables represents the execution of the observables. On the parameter that was given when creating the observable there are three functions available to send data to the subscribers of the observable:
+      </p>
+      <ul>
+        <li>
+          “next”: sends any value such as Numbers, Arrays or objects to it’s subscribers.
+        </li>
+        <li>
+          “error”: sends a Javascript error or exception
+        </li>
+        <li>
+          “complete”: does not send any value.
+        </li>
+      </ul>
+      <h3>Open dev tools and monitor the console.</h3>
+      <div fxLayout="row wrap" fxLayoutAlign="start">
+        <p-button label="Promices are eager" (click)="greetPromice()"></p-button>
+        <p-button label="Observable is lazy" (click)="greetObservable()"></p-button>
+        <p-button label="Synchronous Observer (sequential)" (click)="greetingObservableSynchronously()"></p-button>
+        <p-button label="Asynchronous Observer (non-sequential)" (click)="greetingObservableAsynchronously()"></p-button>
+        <p-button label="Observable with multiple values over time" (click)="greetingObservableOverTime()"></p-button>
+        <p-button label="Observable with Operators" (click)="greetingObservableOperator()"></p-button>
+      </div>
+    </p-panel>
+
+    <p-panel header="hot vs cold observable" [toggleable]="true" collapsed="true" toggler="header">
+    </p-panel>
+
+    <p-panel header="rxjs Subjects" [toggleable]="true" collapsed="true" toggler="header">
+    </p-panel>
+
+    <p-panel header="map" [toggleable]="true" collapsed="true" toggler="header">
+    </p-panel>
+
+    <p-panel header="bind" [toggleable]="true" collapsed="true" toggler="header">
+    </p-panel>
+
+    <p-panel header="spread" [toggleable]="true" collapsed="true" toggler="header">
+    </p-panel>
+
+    <p-panel header="ternary/curry function" [toggleable]="true" collapsed="true" toggler="header">
+    </p-panel>
+
+
+    <p-panel header="Localization" [toggleable]="true" collapsed="true" toggler="header">
+      https://angular.io/guide/i18n
+    </p-panel>
+
+    <p-panel header="rest put vs post, the nature of idempotent methods" [toggleable]="true" collapsed="true" toggler="header">
+      https://restfulapi.net/rest-put-vs-post/
+      <h3>GET, PUT, DELETE, HEAD, OPTIONS and TRACE are idempotent.</h3>
+      <p>
+        In the context of REST APIs, when making multiple identical requests has the same effect as making a single request – then that REST API is called idempotent.
+      </p>
+      <p>
+        When you design REST APIs, you must realize that API consumers can make mistakes. Users can write client code in such a way that there can be duplicate requests coming to the API.
+      </p>
+      <p>
+        These duplicate requests may be unintentional as well as intentional some time (e.g. due to timeout or network issues). You have to design fault-tolerant APIs in such a way that duplicate requests do not leave the system unstable.
+      </p>
+
+      <h3>HTTP POST is not idempotent.</h3>
+      <p>
+        Generally – not necessarily – POST APIs are used to create a new resource on server.
+        So when you invoke the same POST request N times, you will have N new resources on the server.
+        So, POST is not idempotent.
+      </p>
+    </p-panel>
+
+    <p-panel header="Error Handling" [toggleable]="true" collapsed="true" toggler="header">
+      https://angular.io/guide/i18n
+    </p-panel>
+
+    <p-panel header="Random" [toggleable]="true" collapsed="true" toggler="header">
+      <h4>Given a list of numbers and a number k, return whether any two numbers from the list add up to k</h4>
+      <p>
+        You should start reading it from the else block, then the if block.
+      </p>
+
+      <p>
+        What hashMap[k - value] = true does is keep track of what number we will need to
+        get to k using the current item value of the array.
+      </p>
+
+      <p>
+        For example, if k is 11 and the current item value is 7, then hashMap will become
+        &#123; "4": true&#125;, meaning that we are looking for a 4 (because 7 + 4 == 11). If the next
+        value is 3, then hashMap becomes &#123;"4": true, "8": true &#125;, meaning we are looking
+        for either 4 or 8 at this point, ...
+      </p>
+
+      <p-button label="test" (click)="findSums([2,5,7,8,9,11,12], 12)"></p-button>
+
+      <pre><code [highlight]="findSum" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+    </p-panel>
+
+  </div>
+
+</div>

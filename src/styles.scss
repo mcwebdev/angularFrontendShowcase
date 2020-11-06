@@ -92,9 +92,19 @@ p-header{
   background: #eaeaea;
 }
 
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  color: #333;
+  background: #f8f8f8;
+  font-size: 18px;
+}
 
-
-
+.p-panel-header span {
+  font-size: 24px;
+  text-transform: capitalize;
+}
 
 /*PRIME NG*/
 span.flag {

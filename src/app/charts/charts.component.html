@@ -1,21 +1,54 @@
-<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="start">
-  <div fxFlex="25">
-    <p-chart type="bar" [data]="data"></p-chart>
+<h1>D3.js Charts</h1>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap.xs="10px 0px">
+  <div fxFlex="30" fxFlexFill>
+    <p-chart type="bar" [data]="dataD3"></p-chart>
   </div>
-  <div fxFlex="25">
+  <div fxFlex="30" fxFlexFill>
     <p-chart type="doughnut" [data]="dataDoughnut"></p-chart>
   </div>
-  <div fxFlex="25">
+  <div fxFlex="30" fxFlexFill>
     <p-toast [style]="{marginTop: '80px'}"></p-toast>
-    <p-chart type="line" [data]="dataLine" (onDataSelect)="selectData($event)"></p-chart>
+    <p-chart #chart type="line" [data]="dataLine" (onDataSelect)="selectData($event)"></p-chart>
   </div>
-  <div fxFlex="25">
+  <div fxFlex="30" fxFlexFill>
     <p-chart type="polarArea" [data]="dataPolar"></p-chart>
   </div>
-  <div fxFlex="25">
+  <div fxFlex="30" fxFlexFill>
     <p-chart type="pie" [data]="dataPie"></p-chart>
   </div>
-  <div fxFlex="25">
+  <div fxFlex="30" fxFlexFill>
     <p-chart type="radar" [data]="dataRadar"></p-chart>
+  </div>
+</div>
+
+<h1>Ploty.js Charts</h1>
+<div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="space-between start" fxLayoutGap.xs="10px 0px">
+
+  <div fxFlex="30" fxFlexFill>
+    <plotly-plot [data]="graph.data" [layout]="graph.layout"></plotly-plot>
+    <h5>Change Inputs via slider</h5>
+    <input type="number" pInputText [(ngModel)]="graph.data[0].y[0]" />
+    <p-slider [(ngModel)]="graph.data[0].y[0]"></p-slider>
+  </div>
+  <div fxFlex="30" fxFlexFill>
+    <plotly-plot [data]="dataPloty.data" [layout]="dataPloty.layout"></plotly-plot>
+  </div>
+  <div fxFlex="30" fxFlexFill style="">
+    <plotly-plot [data]="weekDays.data" [layout]="weekDays.layout"></plotly-plot>
+  </div>
+  <div fxFlex="30" style="height:500px; display:flex; width: -webkit-fill-available;" #myDiv id="myDiv">
+    <div style=""><plotly-plot [data]="hobsData" [layout]="hobsLayout"></plotly-plot></div>
+  </div>
+  <div fxFlex="30" fxFlexFill style="">
+    <plotly-plot [data]="dataPlotPolar" [layout]="layoutPolar"></plotly-plot>
+  </div>
+  <div fxFlex="30" fxFlexFill style="">
+    <plotly-plot [data]="parchords"></plotly-plot>
+  </div>
+  <div fxFlex="100" fxFlexFill style="">
+    <plotly-plot [data]="parchords"></plotly-plot>
+  </div>
+  <div fxFlex="100" fxFlexFill style="height:800px!important;">
+    <plotly-plot [data]="mapData" [layout]="mapLayout"></plotly-plot>
   </div>
 </div>

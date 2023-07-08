@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Post, Query } from './types';
 import { User } from '../models/user.model';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-graph-ql',
@@ -15,7 +16,7 @@ import { User } from '../models/user.model';
 export class GraphQLComponent implements OnInit {
   posts: Observable<Post[]>;
   @Input() postId: number;
-
+  item$: Observable<any[]>;
   serverData: JSON;
   data: any;
   greeting: string;
@@ -23,8 +24,9 @@ export class GraphQLComponent implements OnInit {
   public user: User;
   public users: User[];
 
-  constructor(private http: HttpClient, private graph: GraphService, private apollo: Apollo) {
+  constructor(private http: HttpClient, private graph: GraphService, private apollo: Apollo, firestore: AngularFirestore) {
     this.userId = 1;
+    this.item$ = firestore.collection('items').valueChanges();
   }
 
   public getUser() {
@@ -36,7 +38,7 @@ export class GraphQLComponent implements OnInit {
   }
 
   sayHi() {
-    this.http.get('http://localhost:4000/sayHi').subscribe(data => {
+    this.http.get('https://us-central1-angularux.cloudfunctions.net/webApi/sayHi').subscribe(data => {
       this.data = data;
       this.greeting = this.data.greeting;
       console.log(this.data);

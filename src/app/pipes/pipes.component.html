@@ -1,7 +1,8 @@
-<div fxLayout="column" fxFlex="25" fxFlex.xs="100">
+<div fxLayout="column" fxFlex="35" fxFlex.xs="100">
+  <p>Use pipes to transform strings, currency amounts, dates, and other data for display. Pipes are simple functions you can use in template expressions to accept an input value and return a transformed value. Pipes are useful because you can use them throughout your application, while only declaring each pipe once. For example, you would use a pipe to show a date as April 15, 1988 rather than the raw string format.</p>
   <h2>Power Booster</h2>
   <input type="text" placeholder="Enter a number, it will be piped into the transform." pInputText [(ngModel)]="expo" />
-  <p>Super power boost: {{10 | exponentialStrength: expo}}</p>
+  <h3>Super power boost: {{10 | exponentialStrength: expo}}</h3>
   <pre><code [highlight]="code" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
   <!--<pre>{{ response | json }}</pre>-->
 </div>

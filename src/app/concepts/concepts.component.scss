@@ -11,23 +11,51 @@ h2 {
   text-transform: capitalize;
 }
 
-h3{
-    margin:8px 0;
+h3 {
+  margin: 8px 0;
 }
+
 p {
   font-size: 18px;
   padding: 8px 0;
 }
 
-li{
-    font-weight:600;
-    padding:3px 0;
+li {
+  font-size: 24px;
 }
 
-p-button{ margin:5px 5px 5px 0;}
+ol {
+  li {
+    font-weight: 600;
+    padding: 5px 0;
+    margin-left: 25px;
+  }
+}
+
+p-button {
+  margin: 5px 5px 5px 0;
+}
 
 ul ul li {
-    font-weight: 100;
-    font-style:italic;
-    color: #000;
+  font-weight: 100;
+  font-style: italic;
+  color: #000;
+}
+
+pre {
+  margin-bottom: 25px;
+}
+
+pre.inline {
+  margin-bottom: 0;
+  display: inline;
+  background: #ededed;
+  color: #600;
+  padding: 0 3px;
+  border: solid 1px #b2b2b2;
+}
+
+ul ul li{
+    font-size:28px;
+    font-style:normal;
 }

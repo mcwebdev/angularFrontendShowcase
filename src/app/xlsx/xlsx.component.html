@@ -1,0 +1,17 @@
+
+<div fxLayout="column">
+  <a href="https://obamawhitehouse.archives.gov/sites/default/files/omb/budget/fy2014/assets/receipts.xls">Sample Spreadsheet</a>
+  <div fxFlex="25">
+    <input type="file" (change)="onFileChange($event)" multiple="false" />
+    <table class="sjs-table">
+      <tr *ngFor="let row of data">
+        <td *ngFor="let val of row">
+          {{val}}
+        </td>
+      </tr>
+    </table>
+    <button (click)="export()">Export!</button>
+  </div>
+
+</div>
+

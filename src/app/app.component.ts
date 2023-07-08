@@ -18,6 +18,7 @@ import {
   Router
 } from '@angular/router';
 import { MenuItem } from 'primeng/api';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-root',
@@ -30,7 +31,7 @@ export class AppComponent {
   loading = false;
   items: MenuItem[];
 
-  constructor(private primengConfig: PrimeNGConfig, private router: Router) {
+  constructor(private primengConfig: PrimeNGConfig, private router: Router, firestore: AngularFirestore) {
     this.router.events.subscribe((event: Event) => {
       switch (true) {
         case event instanceof NavigationStart: {
@@ -72,49 +73,9 @@ export class AppComponent {
         label: 'Charts',
         routerLink: 'charts',
         routerLinkActiveOptions: 'router-link-active'
-      },
-      {
-        label: 'Directives',
-        routerLink: 'directives',
-        routerLinkActiveOptions: 'router-link-active'
-      },
-      {
-        label: 'Pipes',
-        routerLink: 'pipes',
-        routerLinkActiveOptions: 'router-link-active'
-      },
-      {
-        label: 'GraphQL',
-        routerLink: 'graph',
-        routerLinkActiveOptions: 'router-link-active'
-      },
-      {
-        label: 'Web Workers',
-        routerLink: 'webworkers',
-        routerLinkActiveOptions: 'router-link-active'
-      },
-      {
-        label: 'Http',
-        routerLink: 'http',
-        routerLinkActiveOptions: 'router-link-active'
-      },
-      {
-        label: 'UX',
-        routerLink: 'ux',
-        routerLinkActiveOptions: 'router-link-active'
-      },
-      //{
-      //  label: 'Media Detection',
-      //  routerLink: 'media',
-      //  routerLinkActiveOptions: 'router-link-active'
-      //},
-      {
-        label: 'Machine Learning',
-        routerLink: 'machine',
-        routerLinkActiveOptions: 'router-link-active'
-      },
+      }
     ]
-      
+
   }
 
   prepareRoute(outlet: RouterOutlet) {

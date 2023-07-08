@@ -6,6 +6,23 @@
   padding: 20px;
 }
 
-div[fxFlex="25"] {
-    margin-bottom:30px;
-} 
+h1, h5 {
+  padding: 10px 0;
+}
+
+p-slider {
+  padding: 20px 0;
+}
+
+div[fxFlex="30"] {
+  background: rgb(204 204 204 / 32%);
+  border-radius: 5px;
+  border: solid 1px #80CAF6;
+  padding: 10px;
+  box-shadow: 1px 1px 1px rgb(0 0 0 / 45%);
+  margin-bottom: 15px;
+}
+
+svg {
+    background: transparent;
+}

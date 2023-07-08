@@ -11,9 +11,11 @@ import { WebWorkersComponent } from './web-workers/web-workers.component';
 import { WidgetsComponent } from './widgets/widgets.component';
 import { ChartsComponent } from './charts/charts.component';
 import { MediaDetectionComponent } from './media-detection/media-detection.component';
-import { MachineLearningComponent } from './machine-learning/machine-learning.component';
+import { FirebaseComponent } from './firebase/firebase.component';
 import { ConceptsComponent } from './concepts/concepts.component';
 import { GraphQLComponent } from './graph-ql/graph-ql.component';
+import { DecoratorsComponent } from './decorators/decorators.component';
+import { XlsxComponent } from './xlsx/xlsx.component';
 
 const routes: Routes = [
   {
@@ -23,6 +25,11 @@ const routes: Routes = [
       {
         path: 'deckOfCards',
         component: DeckOfCardsComponent,
+        data: { animationState: 'One' }
+      },
+      {
+        path: 'xlsx',
+        component: XlsxComponent,
         data: { animationState: 'One' }
       },
       {
@@ -61,6 +68,11 @@ const routes: Routes = [
         data: { animationState: 'Three' }
       },
       {
+        path: 'decorators',
+        component: DecoratorsComponent,
+        data: { animationState: 'Three' }
+      },
+      {
         path: 'webworkers',
         component: WebWorkersComponent,
         data: { animationState: 'Two' }
@@ -81,8 +93,8 @@ const routes: Routes = [
         data: { animationState: 'Two' }
       },
       {
-        path: 'machine',
-        component: MachineLearningComponent,
+        path: 'firebase',
+        component: FirebaseComponent,
         data: { animationState: 'Three' }
       },
       {

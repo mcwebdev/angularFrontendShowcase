@@ -1,6 +1,5 @@
 <div fxLayoutAlign="center start">
-
-  <div fxLayout="column" fxFlex="50">
+  <div fxLayout="column" fxFlex="65">
     <p-panel header="read only objects" [toggleable]="true" collapsed="true" toggler="header">
       <p>
         TypeScript includes the readonly keyword that makes a property as read-only in the class, type or interface.
@@ -90,23 +89,152 @@
     </p-panel>
 
     <p-panel header="hot vs cold observable" [toggleable]="true" collapsed="true" toggler="header">
+
+      <pre><code [highlight]="observablesTemp" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
     </p-panel>
 
-    <p-panel header="rxjs Subjects" [toggleable]="true" collapsed="true" toggler="header">
+    <p-panel header="rxjs" [toggleable]="true" collapsed="true" toggler="header">
+      <span>
+        <pre class="inline"><code>changeDetection.onPush</code></pre> is the desired method working with observables and is preferred over using
+      </span>
+      <span>
+        <pre class="inline"><code>changeDetection.default</code></pre> which is always subscribed and therefore not performant and non unsubcribeable.
+      </span>
+
+      <h2>Subjects</h2>
+      <p>
+        Before we can make our “cold” observable “hot”, we need to introduce a new type: The Rx Subject.
+        It has a few properties:
+      </p>
+      <ol>
+        <li>It’s an observable. It’s shaped like an observable, and has all the same operators.</li>
+        <li>It’s an observer. It duck-types as an observer. When subscribed to as an observable, will emit any value you “next” into it as an observer.</li>
+        <li>It multicasts. All observers passed to it via `subscribe()` are added to an internal observers list.</li>
+        <li>When it’s done, it’s done. Subjects cannot be reused after they’re unsubscribed, completed or errored.</li>
+        <li>It passes values through itself. To restate #2, really. If you `next` a value into it, it will come out of the observable side of itself.</li>
+      </ol>
+      <p>
+        An Rx Subject is called a “subject” for item #3 above. “Subjects” in the Gang of Four Observer-Pattern are classes
+        with an `addObserver` method, generally. In this case, our `addObserver` method is `subscribe`. Here is a JSBin
+        showing the basic behavior of an Rx Subject.
+      </p>
+      <pre><code [highlight]="subjects" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
     </p-panel>
 
-    <p-panel header="map" [toggleable]="true" collapsed="true" toggler="header">
+    <p-panel header="map, reduce, filter, includes" [toggleable]="true" collapsed="true" toggler="header">
+      <a href="https://medium.com/poka-techblog/simplify-your-javascript-use-map-reduce-and-filter-bd02c593cc2d">map, reduce, filter</a>
+      <p>
+        The map() method creates a new array populated with the results of calling
+        a provided function on every element in the calling array.
+      </p>
+      <pre><code [highlight]="map" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+      <h2>Reduce</h2>
+      <p-button label="find youngest pilot" (click)="findYoungestPilot()"></p-button>
+      {{findYoungest.name }}{{ findYoungest.years }}
+      <p-button label="find oldest pilot" (click)="findOldestPilot()"></p-button>
+      {{findOldest.name }}{{ findOldest.years }}
+
     </p-panel>
 
-    <p-panel header="bind" [toggleable]="true" collapsed="true" toggler="header">
+    <p-panel header="Destructuring" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+
+      </p>
+      <pre><code [highlight]="destructuringPre" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
     </p-panel>
 
-    <p-panel header="spread" [toggleable]="true" collapsed="true" toggler="header">
+    <p-panel header="Generator Functions" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+        The Generator object is returned by a generator function and it conforms to both the iterable protocol and the iterator protocol.
+      </p>
+      <pre><code [highlight]="fib" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
     </p-panel>
 
-    <p-panel header="ternary/curry function" [toggleable]="true" collapsed="true" toggler="header">
+    <p-panel header="spread operator" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+        The spread operator allows us to spread the value of an array (or any iterable) across
+        zero or more arguments in a function or elements in an array (or any iterable). The rest
+        parameter allows us to pass an indefinite number of parameters to a function and access them in an array.
+      </p>
+      <pre><code [highlight]="spread" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
     </p-panel>
 
+    <p-panel header="ternary operator" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+
+
+      </p>
+      <pre><code [highlight]="ternary" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+    </p-panel>
+
+    <p-panel header="curry function" [toggleable]="true" collapsed="true" toggler="header">
+      <p>
+        Anyone reading about currying should probably understand the concept of first class functions in
+        JavaScript. In short, in functional programming JavaScript has first class functions because it
+        supports functions as arguments and return values.
+      </p>
+
+
+      <p>
+        Currying is the process of taking a function with multiple arguments and turning it into a sequence
+        of functions each with only a single argument.
+      </p>
+
+      <pre><code [highlight]="curry" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+      <h2>
+        This is an example of currying applied on a familiar JavaScript method and generating new functions using it:
+      </h2>
+
+
+      <pre><code [highlight]="curry2" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+
+      <h2>
+        Functional composition
+      </h2>
+      <p>
+        In functional composition you have a sequence of functions applied all on the same single argument as f(g(x)). This would be your example:
+      </p>
+
+      <pre><code [highlight]="curry3" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+
+      <h2>
+        It is also very popular to use a compose function to compose your functions::
+      </h2>
+
+
+      <pre><code [highlight]="curry4" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+
+      <h2>
+        Using the above-defined functions curriedSubstring and curriedLowerCase you can then use compose to do this:
+      </h2>
+
+
+      <pre><code [highlight]="curry5" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+
+      <h2>
+        Using currying led to a better code. I chose syntax:
+      </h2>
+
+      <pre><code [highlight]="curry6" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+
+
+    </p-panel>
 
     <p-panel header="Localization" [toggleable]="true" collapsed="true" toggler="header">
       https://angular.io/guide/i18n
@@ -160,6 +288,39 @@
       <pre><code [highlight]="findSum" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
     </p-panel>
 
-  </div>
+    <p-panel header="Typescript" [toggleable]="true" collapsed="true" toggler="header">
+      <h3>Generics</h3>
+      <pre><code [highlight]="generics" (highlighted)="onHighlight($event)" [lineNumbers]="true"></code></pre>
+      <h3>Flags: Compiler Options</h3>
+      <ul>
+        <li>
+          noImplicitAny <ul>
+  <li>
+    The flag noImplicitAny instructs the compiler to raise an error if it cannot infer the type of a variable (and therefore can only have it as an implicit any type). You can then
+    either say that yes I want it to be of type any by explicitly adding an : any type annotation
+    help the compiler out by adding a few more correct annotations.
+  </li>
+</ul>
+        </li>
+      </ul>
+    </p-panel>
 
+    <p-panel header="resources" [toggleable]="true" collapsed="true" toggler="header">
+      <ul>
+        <li><a href="https://mattperry.is/writing-code/layout-projection-animate-browser-layout-60fps">layout-projection-animate-browser-layout-60fps</a></li>
+        <li><a href="https://popmotion.io/#quick-start-animation-animate-options-repeat">Popmotion.js</a></li>
+        <li><a href="https://www.framer.com/motion/">Framer Motion</a></li>
+        <li><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html">Basic Types</a></li>
+        <li><a href="https://ultimatecourses.com/blog/angular-decorators">angular-decorators</a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+        <li><a href=""></a></li>
+      </ul>
+    </p-panel>
+  </div>
 </div>

@@ -28,22 +28,87 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
 html, body {
   height: 100%;
   width: 100%;
   display: block;
-  font-family: 'Titillium Web', sans-serif!important;
+  font-family: 'Titillium Web', sans-serif !important;
 }
+
 body {
   line-height: 1;
 }
 
-ol, ul {
+ul {
   list-style: none;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h4 {
+  display: block;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h5 {
+  display: block;
+  font-size: .83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h6 {
+  display: block;
+  font-size: .67em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
 }
 
 blockquote, q {
   quotes: none;
+}
+
+svg {
+  background: transparent!important;
 }
 
 blockquote:before, blockquote:after,
@@ -61,13 +126,14 @@ table {
   height: calc(100% - 60px);
 }
 
-p-header{
-    padding:8px;
+p-header {
+  padding: 8px;
 }
 
 .p-component {
   font-family: 'Titillium Web', sans-serif !important;
 }
+
 .p-menuitem-link-active {
   outline: 0 none;
   outline-offset: 0;
@@ -85,9 +151,10 @@ p-header{
 }
 
 .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
-  box-shadow: inset 0 0 2px 2px #4c4c4c!important;
-  border: solid 1px #fff!important;
+  box-shadow: inset 0 0 2px 2px #4c4c4c !important;
+  border: solid 1px #fff !important;
 }
+
 .p-menubar {
   background: #eaeaea;
 }
@@ -105,6 +172,61 @@ p-header{
   font-size: 24px;
   text-transform: capitalize;
 }
+
+.p-panel-header {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*PRIME NG*/
 span.flag {
@@ -1091,9 +1213,10 @@ img.flag {
 .flag-zw {
   background-position: 0 100%
 }
+
 p-slider {
   padding: 10px;
-  display:block;
+  display: block;
 }
 
 
@@ -1101,7 +1224,7 @@ p-slider {
   app-widgets {
     position: absolute;
     top: 30px;
-    left: 0!important;
+    left: 0 !important;
   }
 
   .p-menubar-button {
@@ -1109,10 +1232,10 @@ p-slider {
     right: 10px;
   }
 
-  p-menubar, .p-menubar  {
-    max-height: 60px!important;
-    display:block;
-    height:60px;
+  p-menubar, .p-menubar {
+    max-height: 60px !important;
+    display: block;
+    height: 60px;
   }
 
   p-menubar h2 {
@@ -1124,6 +1247,7 @@ p-slider {
     left: 60px;
     top: 10px;
   }
+
   .widget h2 {
     padding-left: 15px !important;
   }
